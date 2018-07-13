@@ -1,0 +1,16 @@
+<table border='1' style="border-collapse: collapse">
+ <thead>
+ 	<% Object.keys(my_invoices[0]).forEach(function(column_name){ %>
+ 		<th><%= column_name %></th>
+ 	<%  }); %>
+ </thead>
+<tbody>
+<% my_invoices.forEach(function(invoice){ %>
+	<tr>
+	 	<% Object.keys(invoice).forEach(key){ %>
+	 		<td><%= invoice[key]%></td>
+	    <%- }) %>
+	</tr>
+<% }); %>
+</tbody>
+</table>
