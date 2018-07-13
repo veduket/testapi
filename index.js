@@ -76,7 +76,9 @@ app.get("/invoices",function(req,res){
         if(invoices){
           // res.setHeader("Content-Type","application/json");
           res.statusCode=200;
-          res.render("invoices/index.html.ejs", {my_invoices: invoices});
+          //res.render("invoices/index.html.ejs", {my_invoices: invoices});
+          res.send(invoices);
+
         }
       });    
     }
