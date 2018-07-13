@@ -1,0 +1,25 @@
+{
+  "name": "testapi",
+  "version": "1.0.0",
+  "description": "test api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dawitfikre/testapi.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "dawit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dawitfikre/testapi/issues"
+  },
+  "homepage": "https://github.com/dawitfikre/testapi#readme",
+  "dependencies": {
+    "request": "^2.87.0"
+  }
+}
