@@ -1,16 +1,71 @@
-<table border='1' style="border-collapse: collapse">
- <thead>
- 	<% Object.keys(my_invoices[0]).forEach(function(column_name){ %>
- 		<th><%= column_name %></th>
- 	<%  }); %>
- </thead>
-<tbody>
-<% my_invoices.forEach(function(invoice){ %>
-	<tr>
-	 	<% Object.keys(invoice).forEach(key){ %>
-	 		<td><%= invoice[key]%></td>
-	    <%- }) %>
-	</tr>
-<% }); %>
-</tbody>
-</table>
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Title Page</title>
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">  
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">		
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body class="container-fluid" style="margin-left:10px;margin-right:10px">
+		<h1 class="text-center">HelloCash API Invoices</h1>
+		<div class="table-responsive">
+			<table id="dave_invoice_table" class="display table table-hover table-stripped table-bordered">
+				<thead>
+				<tr>
+					<th>id</th>
+					<th>code</th>
+					<th>date</th>
+					<th>expires</th>
+					<th>from</th>
+					<th>fromname</th>
+					<th>to</th>
+					<th>toname</th>
+					<th>amount</th>
+					<th>description</th>
+					<th>currency</th>
+					<th>status</th>
+					<th>statusdetail</th>
+					</tr>
+				</thead>
+				<tbody>
+						<% var columns=Object.keys(my_invoices[0]); %>
+						<% my_invoices.forEach(function(invoice){ %>
+							<tr>
+								<% columns.forEach(function(key){ %>
+									<td><%= invoice[key] %></td>
+								<% });%>
+							</tr>
+						<% });%>
+				</tbody>
+			</table>
+		</div>
+		
+		
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+		<script>
+			$(document).ready( function () {
+				// $('#dave_invoice_table').hide();
+				$('#dave_invoice_table').DataTable({
+					responsive: true
+				});		
+			});
+		</script>
+	</body>
+	</html>
+	
